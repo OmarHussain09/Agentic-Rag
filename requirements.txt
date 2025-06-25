@@ -12,3 +12,4 @@ validators
 python-dotenv
 pytest
 langchain_tavily
+beautifulsoup4
