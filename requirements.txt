@@ -13,3 +13,4 @@ python-dotenv
 pytest
 langchain_tavily
 beautifulsoup4
+pysqlite3-binary
