@@ -21,8 +21,6 @@ This project implements a Retrieval-Augmented Generation (RAG) workflow using La
 - **`generator.py`**: Defines the RAG chain for answer generation.
 - **`router.py`**: Routes questions to vectorstore or web search based on topic.
 - **`__init__.py`**: Exports key functions for the package.
-- **Redundant File**:
-  - `retriever.py`: Duplicates `initialize_vectorstore` from `utils.py` with hardcoded URLs. **Recommendation**: Remove and update `graph.py` to import `initialize_vectorstore` from `utils.py`.
 
 **Note**: Commented-out code in several files (e.g., old LLM initializations) should be cleaned up for clarity.
 
@@ -78,11 +76,6 @@ See `requirements.txt` for a full list. Key dependencies include:
 - **LLM Initialization**: Uses a singleton pattern in `utils.py` to initialize Groq and Gemini LLMs once, avoiding redundant instantiations.
 - **Vectorstore**: Built with Chroma and HuggingFace embeddings (`all-MiniLM-L6-v2`), supporting user-provided URLs.
 - **Web Search**: Integrates Tavily for queries outside the vectorstore’s scope.
-- **To-Do**:
-  - Remove `retriever.py` and update `graph.py` to use `utils.initialize_vectorstore`.
-  - Clean up commented-out code for maintainability.
-  - Enhance metadata handling to ensure consistent source attribution (addresses "Unknown" source issue).
-  - Add unit tests using `pytest`.
 
 ## Troubleshooting
 - **"Unknown" Source in Documents**: Ensure URLs are valid and accessible. Check logs for metadata issues during document loading (`utils.py`).
